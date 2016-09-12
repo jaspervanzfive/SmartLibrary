@@ -134,6 +134,7 @@ namespace SadSignFinalProject
 
         }
 
+        //SampleChanges now check
         private void LoginForm_Load(object sender, EventArgs e)
         {
             //LOAD COMBOBOX AVAILABLE CAMERA

@@ -128,3 +128,6 @@ C:\Users\Jasper\Documents\Jasper\SadSignFinalProject\SadSignFinalProject\obj\Deb
 C:\Users\Jasper\Documents\Jasper\SadSignFinalProject\SadSignFinalProject\obj\Debug\SadSignFinalProject.exe.licenses
 C:\Users\Jasper\Documents\Jasper\SadSignFinalProject\SadSignFinalProject\obj\Debug\SadSignFinalProject.exe
 C:\Users\Jasper\Documents\Jasper\SadSignFinalProject\SadSignFinalProject\obj\Debug\SadSignFinalProject.pdb
+C:\Users\Dong\Documents\GitHub\SmartLibrary\SadSignFinalProject\SadSignFinalProject\bin\Debug\SadSignFinalProject.exe.config
+C:\Users\Dong\Documents\GitHub\SmartLibrary\SadSignFinalProject\SadSignFinalProject\obj\Debug\SadSignFinalProject.exe
+C:\Users\Dong\Documents\GitHub\SmartLibrary\SadSignFinalProject\SadSignFinalProject\obj\Debug\SadSignFinalProject.pdb
