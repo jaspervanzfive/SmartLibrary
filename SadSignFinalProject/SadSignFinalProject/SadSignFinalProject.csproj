@@ -1,0 +1,567 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{F679B1DC-41E5-4E18-A408-BF7C4418B86B}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>SadSignFinalProject</RootNamespace>
+    <AssemblyName>SadSignFinalProject</AssemblyName>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="AForge, Version=2.2.5.0, Culture=neutral, PublicKeyToken=c1db6ff4eaa06aeb" />
+    <Reference Include="AForge.Controls">
+      <HintPath>..\..\..\..\..\..\..\SADSIGN\drivers\Release\AForge.Controls.dll</HintPath>
+    </Reference>
+    <Reference Include="AForge.Video, Version=2.2.5.0, Culture=neutral, PublicKeyToken=cbfb6e07d173c401, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\..\..\SADSIGN\drivers\Release\AForge.Video.dll</HintPath>
+    </Reference>
+    <Reference Include="AForge.Video.DirectShow, Version=2.2.5.0, Culture=neutral, PublicKeyToken=61ea4348d43881b7, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\..\..\SADSIGN\drivers\Release\AForge.Video.DirectShow.dll</HintPath>
+    </Reference>
+    <Reference Include="BarcodeLib.Barcode.WinForms">
+      <HintPath>..\..\..\..\..\..\..\SADSIGN\drivers\BarcodeLib.Barcode.WinForms.dll</HintPath>
+    </Reference>
+    <Reference Include="BarcodeLib.BarcodeReader">
+      <HintPath>..\..\..\..\..\..\..\SADSIGN\drivers\BarcodeLib_NETBarcodeReader_Trial\BarcodeLib.BarcodeReader.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.Data.v15.1, Version=15.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.DataAccess.v15.1, Version=15.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.Printing.v15.1.Core, Version=15.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.Sparkline.v15.1.Core, Version=15.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.Utils.v15.1, Version=15.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.Xpo.v15.1, Version=15.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.XtraBars.v15.1, Version=15.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraEditors.v15.1, Version=15.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraGrid.v15.1, Version=15.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraLayout.v15.1, Version=15.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.XtraPrinting.v15.1, Version=15.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="Gma.QrCodeNet.Encoding.Net45">
+      <HintPath>..\..\..\..\..\..\..\SADSIGN\drivers\QrCode.Net 0.4 Pre-Release\Gma.QrCodeNet.Encoding.Net45\Gma.QrCodeNet.Encoding.Net45.dll</HintPath>
+    </Reference>
+    <Reference Include="MetroFramework">
+      <HintPath>..\..\..\..\..\..\..\framework\metroframework-modern-ui-master\packages\MetroModernUI.1.3.5.0\lib\net45\MetroFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="MetroFramework.Design">
+      <HintPath>..\..\..\..\..\..\..\framework\metroframework-modern-ui-master\packages\MetroModernUI.1.3.5.0\lib\net45\MetroFramework.Design.dll</HintPath>
+    </Reference>
+    <Reference Include="MetroFramework.Fonts">
+      <HintPath>..\..\..\..\..\..\..\framework\metroframework-modern-ui-master\packages\MetroModernUI.1.3.5.0\lib\net45\MetroFramework.Fonts.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.mshtml, Version=7.0.3300.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="MySql.Data, Version=6.9.7.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL" />
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.Linq" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="Telerik.WinControls, Version=2015.2.728.40, Culture=neutral, PublicKeyToken=5bb2a467cbec794e" />
+    <Reference Include="Telerik.WinControls.GridView, Version=2015.2.728.40, Culture=neutral, PublicKeyToken=5bb2a467cbec794e, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\..\..\Program Files (x86)\Telerik\UI for WinForms Q2 2015\Bin40\Telerik.WinControls.GridView.dll</HintPath>
+    </Reference>
+    <Reference Include="Telerik.WinControls.Themes.TelerikMetro, Version=2015.2.728.40, Culture=neutral, PublicKeyToken=5bb2a467cbec794e, processorArchitecture=MSIL" />
+    <Reference Include="Telerik.WinControls.Themes.TelerikMetroBlue, Version=2015.2.728.40, Culture=neutral, PublicKeyToken=5bb2a467cbec794e, processorArchitecture=MSIL" />
+    <Reference Include="Telerik.WinControls.Themes.TelerikMetroTouch, Version=2015.2.728.40, Culture=neutral, PublicKeyToken=5bb2a467cbec794e, processorArchitecture=MSIL" />
+    <Reference Include="Telerik.WinControls.Themes.Windows8, Version=2015.2.728.40, Culture=neutral, PublicKeyToken=5bb2a467cbec794e, processorArchitecture=MSIL" />
+    <Reference Include="Telerik.WinControls.UI, Version=2015.2.728.40, Culture=neutral, PublicKeyToken=5bb2a467cbec794e, processorArchitecture=MSIL" />
+    <Reference Include="TelerikCommon, Version=2015.2.728.40, Culture=neutral, PublicKeyToken=5bb2a467cbec794e" />
+    <Reference Include="Transitions">
+      <HintPath>..\..\..\..\..\..\..\SADSIGN\passcode\sad\Transitions.dll</HintPath>
+    </Reference>
+    <Reference Include="WindowsBase" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Announcements.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Announcements.Designer.cs">
+      <DependentUpon>Announcements.cs</DependentUpon>
+    </Compile>
+    <Compile Include="attendance.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="attendance.Designer.cs">
+      <DependentUpon>attendance.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BookManager.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="BookManager.Designer.cs">
+      <DependentUpon>BookManager.cs</DependentUpon>
+    </Compile>
+    <Compile Include="borrowers_section.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="borrowers_section.Designer.cs">
+      <DependentUpon>borrowers_section.cs</DependentUpon>
+    </Compile>
+    <Compile Include="camera1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="camera1.Designer.cs">
+      <DependentUpon>camera1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormForAll.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormForAll.Designer.cs">
+      <DependentUpon>FormForAll.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Homepage.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Homepage.Designer.cs">
+      <DependentUpon>Homepage.cs</DependentUpon>
+    </Compile>
+    <Compile Include="IssueBooks.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="IssueBooks.Designer.cs">
+      <DependentUpon>IssueBooks.cs</DependentUpon>
+    </Compile>
+    <Compile Include="LoginForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="LoginForm.Designer.cs">
+      <DependentUpon>LoginForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MainFormUI.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MainFormUI.Designer.cs">
+      <DependentUpon>MainFormUI.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ScannerForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ScannerForm.Designer.cs">
+      <DependentUpon>ScannerForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ScannerPage.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ScannerPage.Designer.cs">
+      <DependentUpon>ScannerPage.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ShapedForm1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ShapedForm1.Designer.cs">
+      <DependentUpon>ShapedForm1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SplashScreen.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SplashScreen.Designer.cs">
+      <DependentUpon>SplashScreen.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="StaffTable.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="StaffTable.Designer.cs">
+      <DependentUpon>StaffTable.cs</DependentUpon>
+    </Compile>
+    <Compile Include="studentManager.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="studentManager.Designer.cs">
+      <DependentUpon>studentManager.cs</DependentUpon>
+    </Compile>
+    <Compile Include="upperLayer.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="upperLayer.Designer.cs">
+      <DependentUpon>upperLayer.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="Announcements.resx">
+      <DependentUpon>Announcements.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="attendance.resx">
+      <DependentUpon>attendance.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="BookManager.resx">
+      <DependentUpon>BookManager.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="borrowers_section.resx">
+      <DependentUpon>borrowers_section.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="camera1.resx">
+      <DependentUpon>camera1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormForAll.resx">
+      <DependentUpon>FormForAll.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Homepage.resx">
+      <DependentUpon>Homepage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="IssueBooks.resx">
+      <DependentUpon>IssueBooks.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="LoginForm.resx">
+      <DependentUpon>LoginForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MainFormUI.resx">
+      <DependentUpon>MainFormUI.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\licenses.licx" />
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <EmbeddedResource Include="ScannerForm.resx">
+      <DependentUpon>ScannerForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ScannerPage.resx">
+      <DependentUpon>ScannerPage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ShapedForm1.resx">
+      <DependentUpon>ShapedForm1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SplashScreen.resx">
+      <DependentUpon>SplashScreen.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="StaffTable.resx">
+      <DependentUpon>StaffTable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="studentManager.resx">
+      <DependentUpon>studentManager.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="upperLayer.resx">
+      <DependentUpon>upperLayer.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\attendance.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\attendance1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\books.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\books1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\borrowers.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\borrowers1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\home.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\home1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\library.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\library1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\scanner.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\scanner1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\students.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\students1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\tryone2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\circle_filled.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\circle_unfilled.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\eight.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\five.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\four.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\nine.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\one.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\seven.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\six.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\three.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\two.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\zero.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\z0.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\z1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\z2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\z3.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\z4.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\z5.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\z6.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\z7.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\z8.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\z9.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\filled.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\unfilled.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\aboutblue.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\aboutdef.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\calendarblue.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\homeblue.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\homedefa.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\settings default.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\settingsblue.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\settingsdef.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\tenner.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\calendardefault.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\caldefs.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\setdef.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\addd.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\adde.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\cleard.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\cleare.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\deleted.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\deletee.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\printdis.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\PrintEn.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\updated.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\updatee.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\uploadb.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\uploadbdis.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\unknown.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\checked-mark.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\1455633561_sign-check.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\PRINTBARCODE.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\no_book_cover.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\bookcover.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\navanounce.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\navattendance.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\navbooks.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\navborrow.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\navcomputer.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\navlibrary.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\navstaffs.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\navstudents.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\cancel.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\canceld.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\find.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\findd.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\issue.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\issued.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\select.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\selectd.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\return.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\returnd.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\available.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\borrowed.png" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
